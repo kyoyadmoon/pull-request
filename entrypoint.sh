@@ -82,4 +82,4 @@ pr_url=$(hub pull-request \
   $PR_ARG \
   || true)
 echo "pr_url:$pr_url"
-echo ::set-output name=pr_url::$pr_url
+echo "::set-output name=pr_url::$pr_url"
