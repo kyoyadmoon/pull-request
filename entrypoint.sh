@@ -75,5 +75,5 @@ COMMAND="hub pull-request \
 echo "$COMMAND"
 
 # sh -c "$COMMAND"
-eval "pr_url=$COMMAND"
+pr_url=$(sh -c "$COMMAND")
 echo ::set-output name=pr_url::$pr_url
