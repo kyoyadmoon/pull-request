@@ -75,11 +75,8 @@ COMMAND="hub pull-request \
 echo "$COMMAND"
 
 # sh -c "$COMMAND"
-pr_url=$(hub pull-request \
-  -b $DESTINATION_BRANCH \
-  -h $SOURCE_BRANCH \
-  --no-edit \
-  $PR_ARG \
-  || true)
+
+pr_url=$(sh -c "$COMMAND")
+
 echo "pr_url:$pr_url"
 echo "::set-output name=pr_url::$pr_url"
