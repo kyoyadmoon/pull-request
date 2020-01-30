@@ -42,10 +42,10 @@ export GITHUB_USER="$GITHUB_ACTOR"
 
 PR_ARG="$INPUT_PR_TITLE"
 if [[ ! -z "$PR_ARG" ]]; then
-  PR_ARG="-m $PR_ARG"
+  PR_ARG="-m \"$PR_ARG\""
 
   if [[ ! -z "$INPUT_PR_BODY" ]]; then
-    PR_ARG="$PR_ARG -m $INPUT_PR_BODY"
+    PR_ARG="$PR_ARG -m \"$INPUT_PR_BODY\""
   fi
 fi
 
@@ -58,11 +58,11 @@ if [[ ! -z "$INPUT_PR_ASSIGNEE" ]]; then
 fi
 
 if [[ ! -z "$INPUT_PR_LABEL" ]]; then
-  PR_ARG="$PR_ARG -l $INPUT_PR_LABEL"
+  PR_ARG="$PR_ARG -l \"$INPUT_PR_LABEL\""
 fi
 
 if [[ ! -z "$INPUT_PR_MILESTONE" ]]; then
-  PR_ARG="$PR_ARG -M $INPUT_PR_MILESTONE"
+  PR_ARG="$PR_ARG -M \"$INPUT_PR_MILESTONE\""
 fi
 
 COMMAND="hub pull-request \
